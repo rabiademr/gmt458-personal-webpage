@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kişisel Web Sayfası</title>
+</head>
+<body>
+    <header>
+        <button type="button" onclick="changeLanguage('tr')">Türkçe</button>
+        <button type="button" onclick="changeLanguage('en')">English</button>
+
+        <h1 id="heading">Kişisel Web Sayfası</h1>
+    </header>
+    <nav aria-label="Ana menü">
+    <a href="index.html">Ana Sayfa</a> |
+    <a href="about.html">Hakkımda</a> |
+    <a href="projects.html">Projeler</a> |
+    <a href="maps.html">Haritalar</a> |
+    <a href="hobbies.html">Hobiler</a>
+</nav>
+
+    <main>
+        <p id="intro">
+            Kişisel bilgiler ve içerik daha sonra eklenecek.
+        </p>
+    </main>
+
+    <script>
+        function changeLanguage(language) {
+            document.documentElement.lang = language;
+
+            const isTurkish = language === 'tr';
+
+            document.title = isTurkish
+                ? 'Kişisel Web Sayfası'
+                : 'Personal Website';
+
+            document.getElementById('heading').textContent = document.title;
+
+            document.getElementById('intro').textContent = isTurkish
+                ? 'Kişisel bilgiler ve içerik daha sonra eklenecek.'
+                : 'Personal information and content will be added later.';
+        }
+    </script>
+</body>
+</html>
