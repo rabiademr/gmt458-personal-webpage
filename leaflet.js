@@ -46,7 +46,7 @@ function extraPopup(place) {
  return `<article class="place-popup"><img style="height:240px;object-fit:contain" src="${place.image}" alt="${place.name}"><h3>${place.name}</h3><p>${tr ? place.tr : place.en}</p><small>${place.address}</small>${place.noteEn ? `<p>${tr ? place.noteTr : place.noteEn}</p>` : ''}<p><a href="${place.maps}" target="_blank" rel="noopener">${tr ? 'Google Maps’te Aç' : 'Open in Google Maps'}</a> · <a href="hobbies.html#${place.id}">${tr ? 'Hobilerime Dön' : 'Back to Hobbies'}</a></p></article>`;
 }
 function showExtra(place) {
- map.setView(place.coordinates, place.id === 'bozburun' ? 11 : 15);
+ map.setView(place.coordinates, ['bozburun','bozcaada','cappadocia'].includes(place.id) ? 11 : 15);
  updateMarkers(); extraMarkers.get(place.id).openPopup();
 }
 favoritePlaces.forEach(place => {

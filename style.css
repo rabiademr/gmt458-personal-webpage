@@ -1410,3 +1410,9 @@ footer p {
 .ol-popup { width:280px; max-width:calc(100vw - 100px); }
 
 .hobby-photo { display: block; width: 100%; height: 280px; object-fit: cover; border-radius: 12px; margin: 28px 0 20px; }
+
+.hobby-gallery { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; margin-top: 24px; }
+.hobby-gallery figure { margin: 0; min-width: 0; }
+.hobby-gallery img { display: block; width: 100%; height: 260px; object-fit: cover; border-radius: 12px; }
+.hobby-gallery figcaption { margin-top: 10px; color: var(--text-muted, #a9bac5); font-size: .9rem; line-height: 1.6; }
+@media (max-width: 620px) { .hobby-gallery { grid-template-columns: 1fr; } .hobby-gallery img { height: auto; max-height: 440px; object-fit: contain; } }
