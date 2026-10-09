@@ -70,8 +70,8 @@
                 </button>
 
                 <div class="dropdown-menu">
-                    <a href="leaflet.html">Leaflet</a>
-                    <a href="openlayers.html" class="active" aria-current="page">OpenLayers</a>
+                    <a href="leaflet.html" data-tr="Sevdiğim Mekânlar · Leaflet" data-en="Favorite Places · Leaflet">Favorite Places · Leaflet</a>
+                    <a href="openlayers.html" class="active" aria-current="page" data-tr="Proje Haritaları · OpenLayers" data-en="Project Maps · OpenLayers">Project Maps · OpenLayers</a>
                 </div>
 
             </div>
@@ -119,14 +119,10 @@
     </p>
 
 
-    <h1 data-en="Interactive map with OpenLayers." data-tr="OpenLayers ile etkileşimli harita.">Interactive map with OpenLayers.</h1>
+    <h1 data-tr="Projelerimi haritada keşfet." data-en="Explore my projects on the map.">Explore my projects on the map.</h1>
 
 
-    <p data-en="The same project locations are visualized using OpenLayers. Project markers become visible when zooming to level 10 or higher." data-tr="Aynı proje konumları OpenLayers ile gösterilir. İşaretçiler 10 veya daha yüksek yakınlaştırma düzeyinde görünür.">
-        The same project locations are visualized using
-        OpenLayers. Project markers become visible when
-        zooming to level 10 or higher.
-    </p>
+    <p data-tr="Wadi As-Sirhan’daki gerçek çalışma alanımı keşfet: Crop Masking analizi ve ayrı bir devam çalışması olan GEOINSIGHT web platformu." data-en="Explore my actual study area in Wadi As-Sirhan: the Crop Masking analysis and GEOINSIGHT, a separate follow-up web platform.">Explore my actual study area in Wadi As-Sirhan: the Crop Masking analysis and GEOINSIGHT, a separate follow-up web platform.</p>
 
 </section>
 
@@ -134,7 +130,24 @@
 
 <section class="section map-container-section">
 
-    <div id="openlayers-map"></div>
+    <div class="project-map-tools">
+<button class="button primary" type="button" id="fit-wadi" data-tr="Çalışma Alanına Yaklaş" data-en="Zoom to Study Area">Zoom to Study Area</button>
+<button class="button secondary" type="button" id="map-overview" data-tr="Bölgesel Görünüm" data-en="Regional View">Regional View</button>
+<label><input id="aoi-toggle" type="checkbox" checked> <span data-tr="Çalışma alanı sınırı" data-en="Study area boundary">Study area boundary</span></label>
+<label><input id="marker-toggle" type="checkbox" checked> <span data-tr="Proje konumu" data-en="Project location">Project location</span></label>
+</div>
+<div class="analysis-controls">
+<label for="basemap-select"><span data-tr="Altlık" data-en="Basemap">Basemap</span><select id="basemap-select"><option value="satellite" data-tr="Uydu · Esri World Imagery" data-en="Satellite · Esri World Imagery">Satellite · Esri World Imagery</option><option value="street" data-tr="Sokak · OpenStreetMap" data-en="Street · OpenStreetMap">Street · OpenStreetMap</option></select></label>
+<label for="mask-date"><span data-tr="Analiz tarihi" data-en="Analysis date">Analysis date</span><select id="mask-date"><option value="2020-01" data-tr="Ocak 2020 · Düşük sezon" data-en="January 2020 · Off-season">January 2020 · Off-season</option><option value="2020-02" data-tr="Şubat 2020 · Geçiş" data-en="February 2020 · Transition">February 2020 · Transition</option><option value="2023-04" selected data-tr="Nisan 2023 · Yüksek sezon" data-en="April 2023 · Peak season">April 2023 · Peak season</option></select></label>
+<label><input type="checkbox" id="crop-toggle" checked><span data-tr="Tarım maskesi" data-en="Crop mask">Crop mask</span></label>
+<label for="mask-opacity"><span data-tr="Maske görünürlüğü" data-en="Mask opacity">Mask opacity</span><input type="range" id="mask-opacity" min="0" max="100" value="75"><output id="opacity-value" for="mask-opacity">75%</output></label>
+</div>
+<div class="analysis-summary"><p><span data-tr="Ekili alan" data-en="Cropped area">Cropped area</span> <strong id="crop-area"></strong></p><p>NDVI ≥ <strong id="ndvi-threshold"></strong></p><p><span class="legend-crop"></span> <span data-tr="Sarı: tarım olarak sınıflandırılmış pikseller" data-en="Yellow: pixels classified as crop">Yellow: pixels classified as crop</span></p></div>
+<p class="map-data-note" data-tr="Maskeler orijinal Sentinel-2 analiz çıktılarıdır. Alan değeri proje tablosundan alınır. Uydu altlığı farklı tarihlerden oluşabilir; seçilen analiz ayının görüntüsü değildir. Maskeyi kapatarak veya görünürlüğünü azaltarak karşılaştırın." data-en="Masks are original Sentinel-2 analysis outputs. Area values come from the project table. Satellite imagery may combine different dates; it is not the image for the selected analysis month. Toggle the mask or lower its opacity to compare.">Masks are original Sentinel-2 analysis outputs. Area values come from the project table. Satellite imagery may combine different dates; it is not the image for the selected analysis month. Toggle the mask or lower its opacity to compare.</p>
+<p id="raster-load-status" role="status" aria-live="polite"></p>
+<div id="openlayers-map" aria-label="Wadi As-Sirhan project map"></div>
+<p id="map-status" role="status"></p>
+<div class="map-legend"><span class="legend-aoi"></span><span data-tr="Gerçek AOI sınırı" data-en="Actual AOI boundary">Actual AOI boundary</span><span class="legend-marker"></span><span data-tr="Ortak çalışma konumu" data-en="Shared study location">Shared study location</span></div>
 
 
     <div
@@ -144,7 +157,7 @@
         <a
             href="#"
             id="ol-popup-closer"
-            class="ol-popup-closer">
+            class="ol-popup-closer" aria-label="Close popup">
         </a>
 
         <div id="ol-popup-content"></div>
@@ -172,6 +185,9 @@
 </section>
 
 
+<section class="section project-map-cards">
+<article class="map-project-card"><p class="section-label">01 · REMOTE SENSING</p><h2>Wadi As-Sirhan Crop Masking</h2><p data-tr="Sentinel-2 ve NDVI ile 2020–2024 dönemindeki tarım alanlarının analizi. Haritadaki sınır, bu çalışmanın gerçek AOI verisidir." data-en="Agricultural area analysis for 2020–2024 using Sentinel-2 and NDVI. The map boundary is the actual AOI from this study.">Agricultural area analysis for 2020–2024 using Sentinel-2 and NDVI. The map boundary is the actual AOI from this study.</p><img src="assets/images/08_Five_Year_Crop_Area_Time_Series.png" alt="Five-year cropped area time series" loading="lazy"><a class="button primary" href="assets/documents/06_Report/crop_masking_assignment_rabiademir.pdf" target="_blank" rel="noopener" data-tr="Crop Masking Raporu" data-en="Crop Masking Report">Crop Masking Report</a></article>
+<article class="map-project-card"><p class="section-label">02 · WEB GIS</p><h2>GEOINSIGHT Web Platform</h2><p data-tr="İlk çalışmanın analiz yaklaşımını geliştiren ayrı web platformu. Fenoloji, parsel yönetimi, nem ve su yönetimi modülleri kendi arayüz raporunda sunuluyor." data-en="A separate web platform extending the first study’s analytical approach. Phenology, parcel management, moisture and water management modules are presented in its interface report.">A separate web platform extending the first study’s analytical approach. Phenology, parcel management, moisture and water management modules are presented in its interface report.</p><p data-tr="Haritada Crop Masking AOI’si referans olarak gösterilir; GEOINSIGHT’ın bütün kapsama alanı olduğu iddia edilmez." data-en="The Crop Masking AOI is shown as a reference; it does not represent the full coverage of GEOINSIGHT.">The Crop Masking AOI is shown as a reference; it does not represent the full coverage of GEOINSIGHT.</p><a class="button primary" href="assets/documents/06_Report/Wadi_As_Sirhan_Pivot_Crop_Mapping_Web_Arayuz_Raporu.pdf" target="_blank" rel="noopener" data-tr="GEOINSIGHT Arayüz Raporu" data-en="GEOINSIGHT Interface Report">GEOINSIGHT Interface Report</a></article></section>
 </main>
 
 
@@ -194,6 +210,8 @@
     src="https://cdn.jsdelivr.net/npm/ol@v10.6.1/dist/ol.js">
 </script>
 
+<script src="wadi-aoi.js"></script>
+<script src="crop-masks.js"></script>
 <script src="openlayers.js"></script>
 
 

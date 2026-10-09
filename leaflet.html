@@ -69,8 +69,8 @@
                 </button>
 
                 <div class="dropdown-menu">
-                    <a href="leaflet.html" class="active" aria-current="page">Leaflet</a>
-                    <a href="openlayers.html">OpenLayers</a>
+                    <a href="leaflet.html" class="active" aria-current="page" data-tr="Sevdiğim Mekânlar · Leaflet" data-en="Favorite Places · Leaflet">Favorite Places · Leaflet</a>
+                    <a href="openlayers.html" data-tr="Proje Haritaları · OpenLayers" data-en="Project Maps · OpenLayers">Project Maps · OpenLayers</a>
                 </div>
 
             </div>
@@ -117,14 +117,9 @@
         WEB GIS
     </p>
 
-    <h1 data-en="Interactive map with Leaflet." data-tr="Leaflet ile etkileşimli harita.">Interactive map with Leaflet.</h1>
+    <h1 data-tr="Sevdiğim mekânlar." data-en="Places I enjoy.">Places I enjoy.</h1>
 
-    <p data-en="An interactive web map showing selected locations related to my academic projects. Markers are hidden when the zoom level is below 10." data-tr="Akademik çalışmalarımın konumlarını gösteren etkileşimli harita. İşaretçiler 10 düzeyinin altında gizlenir.">
-        An interactive web map showing selected
-        locations related to my academic projects.
-        Markers are hidden when the zoom level is
-        below 10.
-    </p>
+    <p data-tr="Spor, hobiler ve keyif aldığım mekânlar: Ankara ve Bozburun’dan kişisel bir harita." data-en="Sports, hobbies and favorite places: a personal map of Ankara and Bozburun.">Sports, hobbies and favorite places: a personal map of Ankara and Bozburun.</p>
 
 </section>
 
@@ -132,7 +127,10 @@
 
 <section class="section map-container-section">
 
-    <div id="leaflet-map"></div>
+    <button type="button" id="show-gym" class="button secondary" data-tr="Gym Center’a Yaklaş" data-en="Find Gym Center">Find Gym Center</button>
+<button type="button" id="show-rolls" class="button secondary" data-tr="Rolls’n Smiles’a Yaklaş" data-en="Find Rolls’n Smiles">Find Rolls’n Smiles</button>
+<div id="more-place-buttons" class="place-map-buttons"></div>
+<div id="leaflet-map"></div>
 
     <div class="map-info">
 
@@ -140,10 +138,7 @@
             Map interaction
         </h3>
 
-        <p data-en="Zoom in to level 10 or higher to display project markers." data-tr="Proje işaretçileri için 10 veya daha yüksek yakınlaştırma düzeyine geçin.">
-            Zoom in to level 10 or higher
-            to display project markers.
-        </p>
+        <p data-tr="İşaretçiler 10 ve üzeri yakınlaştırmada görünür. Fotoğraf için işaretçiye tıklayın." data-en="Markers appear at zoom 10 or above. Click a marker to see the photo.">Markers appear at zoom 10 or above. Click a marker to see the photo.</p>
 
         <p id="leaflet-zoom">
             Current zoom: —
@@ -176,6 +171,7 @@
     src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js">
 </script>
 
+<script src="favorite-places.js"></script>
 <script src="leaflet.js"></script>
 
 
