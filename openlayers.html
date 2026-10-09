@@ -70,8 +70,8 @@
                 </button>
 
                 <div class="dropdown-menu">
-                    <a href="leaflet.html" data-tr="Sevdiğim Mekânlar · Leaflet" data-en="Favorite Places · Leaflet">Favorite Places · Leaflet</a>
-                    <a href="openlayers.html" class="active" aria-current="page" data-tr="Proje Haritaları · OpenLayers" data-en="Project Maps · OpenLayers">Project Maps · OpenLayers</a>
+                    <a href="leaflet.html" data-tr="Favori Mekânlarım" data-en="My Favorite Places">My Favorite Places</a>
+                    <a href="openlayers.html" class="active" aria-current="page" data-tr="Proje Haritası" data-en="Project Map">Project Map</a>
                 </div>
 
             </div>
@@ -119,22 +119,26 @@
     </p>
 
 
-    <h1 data-tr="Projelerimi haritada keşfet." data-en="Explore my projects on the map.">Explore my projects on the map.</h1>
+    <h1 data-tr="Projelerimi ve stajlarımı keşfet." data-en="Explore my projects and internships.">Explore my projects and internships.</h1>
 
 
     <p data-tr="Wadi As-Sirhan’daki gerçek çalışma alanımı keşfet: Crop Masking analizi ve ayrı bir devam çalışması olan GEOINSIGHT web platformu." data-en="Explore my actual study area in Wadi As-Sirhan: the Crop Masking analysis and GEOINSIGHT, a separate follow-up web platform.">Explore my actual study area in Wadi As-Sirhan: the Crop Masking analysis and GEOINSIGHT, a separate follow-up web platform.</p>
 
+<p data-tr="Ankara’daki staj kurumlarımı görmek için MAPEG veya YMN düğmesini seç." data-en="Choose MAPEG or YMN to explore my internship institutions in Ankara.">Choose MAPEG or YMN to explore my internship institutions in Ankara.</p>
 </section>
 
 
 
 <section class="section map-container-section">
 
+    <p data-tr="Bir analiz tarihi seç, sarı tarım alanlarını keşfet. Raporlar için çalışma alanına tıkla." data-en="Choose an analysis date and explore the yellow crop areas. Click the study area to open the reports.">Choose an analysis date and explore the yellow crop areas. Click the study area to open the reports.</p>
     <div class="project-map-tools">
+<button class="button secondary" type="button" id="show-mapeg">MAPEG</button>
+<button class="button secondary" type="button" id="show-ymn">YMN Proje Geliştirme</button>
 <button class="button primary" type="button" id="fit-wadi" data-tr="Çalışma Alanına Yaklaş" data-en="Zoom to Study Area">Zoom to Study Area</button>
 <button class="button secondary" type="button" id="map-overview" data-tr="Bölgesel Görünüm" data-en="Regional View">Regional View</button>
 <label><input id="aoi-toggle" type="checkbox" checked> <span data-tr="Çalışma alanı sınırı" data-en="Study area boundary">Study area boundary</span></label>
-<label><input id="marker-toggle" type="checkbox" checked> <span data-tr="Proje konumu" data-en="Project location">Project location</span></label>
+<label><input id="marker-toggle" type="checkbox" checked> <span data-tr="Proje ve staj konumları" data-en="Project and internship locations">Project and internship locations</span></label>
 </div>
 <div class="analysis-controls">
 <label for="basemap-select"><span data-tr="Altlık" data-en="Basemap">Basemap</span><select id="basemap-select"><option value="satellite" data-tr="Uydu · Esri World Imagery" data-en="Satellite · Esri World Imagery">Satellite · Esri World Imagery</option><option value="street" data-tr="Sokak · OpenStreetMap" data-en="Street · OpenStreetMap">Street · OpenStreetMap</option></select></label>
@@ -212,6 +216,7 @@
 
 <script src="wadi-aoi.js"></script>
 <script src="crop-masks.js"></script>
+<script src="internship-places.js"></script>
 <script src="openlayers.js"></script>
 
 

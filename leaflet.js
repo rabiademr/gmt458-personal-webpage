@@ -2,7 +2,7 @@
 const gymCoordinates = [39.96832, 32.77375];
 const map = L.map('leaflet-map', {
     center: [39.936,32.819], zoom: 12, minZoom: 3, maxZoom: 18,
-    worldCopyJump: false, maxBounds: [[-85, -180], [85, 180]],
+    scrollWheelZoom: false, worldCopyJump: false, maxBounds: [[-85, -180], [85, 180]],
     maxBoundsViscosity: 1
 });
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
