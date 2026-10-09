@@ -9,15 +9,14 @@
         name="viewport"
         content="width=device-width, initial-scale=1.0">
 
-
     <title>
-        OpenLayers Map | Rabia Demir
+        Leaflet Map | Rabia Demir
     </title>
 
 
     <link
         rel="stylesheet"
-        href="https://cdn.jsdelivr.net/npm/ol@v10.6.1/ol.css">
+        href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
 
 
     <link
@@ -70,8 +69,8 @@
                 </button>
 
                 <div class="dropdown-menu">
-                    <a href="leaflet.html">Leaflet</a>
-                    <a href="openlayers.html" class="active" aria-current="page">OpenLayers</a>
+                    <a href="leaflet.html" class="active" aria-current="page">Leaflet</a>
+                    <a href="openlayers.html">OpenLayers</a>
                 </div>
 
             </div>
@@ -118,14 +117,13 @@
         WEB GIS
     </p>
 
+    <h1 data-en="Interactive map with Leaflet." data-tr="Leaflet ile etkileşimli harita.">Interactive map with Leaflet.</h1>
 
-    <h1 data-en="Interactive map with OpenLayers." data-tr="OpenLayers ile etkileşimli harita.">Interactive map with OpenLayers.</h1>
-
-
-    <p data-en="The same project locations are visualized using OpenLayers. Project markers become visible when zooming to level 10 or higher." data-tr="Aynı proje konumları OpenLayers ile gösterilir. İşaretçiler 10 veya daha yüksek yakınlaştırma düzeyinde görünür.">
-        The same project locations are visualized using
-        OpenLayers. Project markers become visible when
-        zooming to level 10 or higher.
+    <p data-en="An interactive web map showing selected locations related to my academic projects. Markers are hidden when the zoom level is below 10." data-tr="Akademik çalışmalarımın konumlarını gösteren etkileşimli harita. İşaretçiler 10 düzeyinin altında gizlenir.">
+        An interactive web map showing selected
+        locations related to my academic projects.
+        Markers are hidden when the zoom level is
+        below 10.
     </p>
 
 </section>
@@ -134,36 +132,20 @@
 
 <section class="section map-container-section">
 
-    <div id="openlayers-map"></div>
-
-
-    <div
-        id="ol-popup"
-        class="ol-popup">
-
-        <a
-            href="#"
-            id="ol-popup-closer"
-            class="ol-popup-closer">
-        </a>
-
-        <div id="ol-popup-content"></div>
-
-    </div>
-
+    <div id="leaflet-map"></div>
 
     <div class="map-info">
 
-        <h3 data-en="OpenLayers implementation" data-tr="OpenLayers Uygulaması">
-            OpenLayers implementation
+        <h3 data-en="Map interaction" data-tr="Harita Etkileşimi">
+            Map interaction
         </h3>
 
-        <p data-en="Zoom to level 10 or higher to display project locations." data-tr="Proje konumları için 10 veya daha yüksek yakınlaştırma düzeyine geçin.">
-            Zoom to level 10 or higher
-            to display project locations.
+        <p data-en="Zoom in to level 10 or higher to display project markers." data-tr="Proje işaretçileri için 10 veya daha yüksek yakınlaştırma düzeyine geçin.">
+            Zoom in to level 10 or higher
+            to display project markers.
         </p>
 
-        <p id="ol-zoom">
+        <p id="leaflet-zoom">
             Current zoom: —
         </p>
 
@@ -191,10 +173,10 @@
 
 
 <script
-    src="https://cdn.jsdelivr.net/npm/ol@v10.6.1/dist/ol.js">
+    src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js">
 </script>
 
-<script src="openlayers.js"></script>
+<script src="leaflet.js"></script>
 
 
 <script src="language.js"></script>

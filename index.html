@@ -1,47 +1,222 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kişisel Web Sayfası</title>
+
+    <title>Rabia Demir | Geomatics Engineering</title>
+
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <header>
-        <button type="button" onclick="changeLanguage('tr')">Türkçe</button>
-        <button type="button" onclick="changeLanguage('en')">English</button>
 
-        <h1 id="heading">Kişisel Web Sayfası</h1>
-    </header>
-    <nav aria-label="Ana menü">
-    <a href="index.html">Ana Sayfa</a> |
-    <a href="about.html">Hakkımda</a> |
-    <a href="projects.html">Projeler</a> |
-    <a href="maps.html">Haritalar</a> |
-    <a href="hobbies.html">Hobiler</a>
-</nav>
+<header class="navbar">
 
-    <main>
-        <p id="intro">
-            Kişisel bilgiler ve içerik daha sonra eklenecek.
-        </p>
-    </main>
+    <a href="index.html" class="active" aria-current="page" class="logo">RD.</a>
 
-    <script>
-        function changeLanguage(language) {
-            document.documentElement.lang = language;
+    <div class="nav-right">
 
-            const isTurkish = language === 'tr';
+        <nav class="main-nav">
 
-            document.title = isTurkish
-                ? 'Kişisel Web Sayfası'
-                : 'Personal Website';
+            <a
+                href="index.html" class="active" aria-current="page"
+                data-tr="Ana Sayfa"
+                data-en="Home">
+                Home
+            </a>
 
-            document.getElementById('heading').textContent = document.title;
+            <a
+                href="about.html"
+                data-tr="Hakkımda"
+                data-en="About">
+                About
+            </a>
 
-            document.getElementById('intro').textContent = isTurkish
-                ? 'Kişisel bilgiler ve içerik daha sonra eklenecek.'
-                : 'Personal information and content will be added later.';
-        }
-    </script>
+            <a
+                href="projects.html"
+                data-tr="Projeler"
+                data-en="Projects">
+                Projects
+            </a>
+
+            <div class="dropdown">
+
+                <button
+                    class="dropdown-button"
+                    type="button"
+                    data-tr="Haritalar"
+                    data-en="Maps">
+                    Maps
+                </button>
+
+                <div class="dropdown-menu">
+                    <a href="leaflet.html">Leaflet</a>
+                    <a href="openlayers.html">OpenLayers</a>
+                </div>
+
+            </div>
+
+            <a
+                href="hobbies.html"
+                data-tr="Hobiler"
+                data-en="Hobbies">
+                Hobbies
+            </a>
+
+        </nav>
+
+        <div class="language-switch">
+
+            <button
+                id="tr-button"
+                type="button"
+                onclick="setLanguage('tr')">
+                TR
+            </button>
+
+            <button
+                id="en-button"
+                type="button"
+                onclick="setLanguage('en')">
+                EN
+            </button>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<main>
+
+    <section class="hero">
+
+        <div>
+
+            <p
+                class="eyebrow"
+                data-tr="GEOMATİK MÜHENDİSLİĞİ"
+                data-en="GEOMATICS ENGINEERING">
+                GEOMATICS ENGINEERING
+            </p>
+
+            <h1>
+                Rabia
+                <span>Demir.</span>
+            </h1>
+
+            <h2
+                data-tr="Geomatik Mühendisliği Öğrencisi"
+                data-en="Geomatics Engineering Student">
+                Geomatics Engineering Student
+            </h2>
+
+            <p
+                class="hero-description"
+                data-tr="Hacettepe Üniversitesi Geomatik Mühendisliği öğrencisiyim. Uzaktan algılama, CBS, uydu görüntüleri, Web GIS ve mekânsal veri analizi üzerine çalışıyorum."
+                data-en="I am a Geomatics Engineering student at Hacettepe University. My interests include Remote Sensing, GIS, satellite imagery, Web GIS and spatial data analysis.">
+
+                I am a Geomatics Engineering student at Hacettepe University.
+                My interests include Remote Sensing, GIS, satellite imagery,
+                Web GIS and spatial data analysis.
+
+            </p>
+
+            <div class="hero-buttons">
+
+                <a
+                    href="projects.html"
+                    class="button primary"
+                    data-tr="Projelerimi Gör"
+                    data-en="View Projects">
+                    View Projects
+                </a>
+
+                <a
+                    href="about.html"
+                    class="button secondary"
+                    data-tr="Hakkımda"
+                    data-en="About Me">
+                    About Me
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="hero-card">
+
+            <div class="coordinate-decoration">
+                39.9334° N<br>
+                32.8597° E
+            </div>
+
+            <p
+                class="section-label"
+                data-tr="İLGİ ALANLARI"
+                data-en="FOCUS AREAS">
+                FOCUS AREAS
+            </p>
+
+            <h3
+                data-tr="Mekânsal veriden anlam üretmek."
+                data-en="Turning spatial data into insight.">
+                Turning spatial data into insight.
+            </h3>
+
+            <ul>
+
+                <li data-tr="Uzaktan Algılama" data-en="Remote Sensing">
+                    Remote Sensing
+                </li>
+
+                <li data-tr="Coğrafi Bilgi Sistemleri" data-en="GIS">
+                    GIS
+                </li>
+
+                <li data-tr="Fotogrametri" data-en="Photogrammetry">
+                    Photogrammetry
+                </li>
+
+                <li data-tr="Web GIS" data-en="Web GIS">
+                    Web GIS
+                </li>
+
+                <li
+                    data-tr="Mekânsal Veri Analizi"
+                    data-en="Spatial Data Analysis">
+                    Spatial Data Analysis
+                </li>
+
+            </ul>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<footer>
+
+    <div>
+        <strong>Rabia Demir</strong>
+        <p data-en="Geomatics Engineering Student" data-tr="Geomatik Mühendisliği Öğrencisi">Geomatics Engineering Student</p>
+    </div>
+
+    <div class="footer-links">
+        <a href="about.html" data-en="About" data-tr="Hakkımda">About</a>
+        <a href="projects.html" data-en="Projects" data-tr="Projeler">Projects</a>
+        <a href="hobbies.html" data-en="Hobbies" data-tr="Hobiler">Hobbies</a>
+    </div>
+
+</footer>
+
+<script src="language.js"></script>
+
 </body>
 </html>

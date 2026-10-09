@@ -1,27 +1,265 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hobiler</title>
-</head>
-<body>
-    <header>
-        <h1>Hobiler</h1>
-    </header>
-    <nav aria-label="Ana menü">
-    <a href="index.html">Ana Sayfa</a> |
-    <a href="about.html">Hakkımda</a> |
-    <a href="projects.html">Projeler</a> |
-    <a href="maps.html">Haritalar</a> |
-    <a href="hobbies.html">Hobiler</a>
-</nav>
 
-    <main>
-        <section>
-            <h2>İlgi Alanlarım</h2>
-            <p>Hobi açıklamaları ve görseller daha sonra eklenecek.</p>
-        </section>
-    </main>
+    <title>Hobbies | Rabia Demir</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="navbar">
+
+    <a href="index.html" class="logo">RD.</a>
+
+    <div class="nav-right">
+
+        <nav class="main-nav">
+
+            <a
+                href="index.html"
+                data-tr="Ana Sayfa"
+                data-en="Home">
+                Home
+            </a>
+
+            <a
+                href="about.html"
+                data-tr="Hakkımda"
+                data-en="About">
+                About
+            </a>
+
+            <a
+                href="projects.html"
+                data-tr="Projeler"
+                data-en="Projects">
+                Projects
+            </a>
+
+            <div class="dropdown">
+
+                <button
+                    class="dropdown-button"
+                    type="button"
+                    data-tr="Haritalar"
+                    data-en="Maps">
+                    Maps
+                </button>
+
+                <div class="dropdown-menu">
+                    <a href="leaflet.html">Leaflet</a>
+                    <a href="openlayers.html">OpenLayers</a>
+                </div>
+
+            </div>
+
+            <a
+                href="hobbies.html" class="active" aria-current="page"
+                data-tr="Hobiler"
+                data-en="Hobbies">
+                Hobbies
+            </a>
+
+        </nav>
+
+        <div class="language-switch">
+
+            <button
+                id="tr-button"
+                type="button"
+                onclick="setLanguage('tr')">
+                TR
+            </button>
+
+            <button
+                id="en-button"
+                type="button"
+                onclick="setLanguage('en')">
+                EN
+            </button>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<main>
+
+<section class="page-hero">
+
+    <p
+        class="section-label"
+        data-tr="HOBİLER"
+        data-en="HOBBIES">
+        HOBBIES
+    </p>
+
+    <h1 data-en="Beyond maps &amp; spatial data." data-tr="Haritaların ve mekânsal verinin ötesinde.">Beyond maps & spatial data.</h1>
+
+    <p
+        data-tr="Geomatik çalışmalarımın dışında fotoğrafçılık, seyahat, müzik ve yeni teknolojileri keşfetmekten keyif alıyorum."
+        data-en="Outside geomatics, I enjoy photography, travelling, music and exploring new technologies.">
+
+        Outside geomatics, I enjoy photography,
+        travelling, music and exploring new technologies.
+
+    </p>
+
+</section>
+
+
+<section class="section">
+
+    <p
+        class="section-label"
+        data-tr="İLGİ ALANLARIM"
+        data-en="INTERESTS">
+        INTERESTS
+    </p>
+
+    <h2
+        class="section-title"
+        data-tr="Haritaların dışında."
+        data-en="Outside the maps.">
+        Outside the maps.
+    </h2>
+
+
+    <div class="hobbies-grid">
+
+        <article class="hobby-card">
+
+            <span class="hobby-number">01</span>
+
+            <div class="hobby-icon">
+                📷
+            </div>
+
+            <h3
+                data-tr="Fotoğrafçılık"
+                data-en="Photography">
+                Photography
+            </h3>
+
+            <p
+                data-tr="Seyahatlerde, günlük yaşamda ve doğada dikkatimi çeken anları ve detayları fotoğraflamayı seviyorum."
+                data-en="I enjoy capturing moments, places and details that catch my attention while travelling and in everyday life.">
+
+                I enjoy capturing moments, places and details
+                that catch my attention while travelling.
+
+            </p>
+
+        </article>
+
+
+        <article class="hobby-card">
+
+            <span class="hobby-number">02</span>
+
+            <div class="hobby-icon">
+                ✈️
+            </div>
+
+            <h3
+                data-tr="Seyahat & Keşif"
+                data-en="Travel & Exploration">
+                Travel & Exploration
+            </h3>
+
+            <p
+                data-tr="Yeni şehirleri, farklı kültürleri ve daha önce görmediğim yerleri keşfetmekten keyif alıyorum."
+                data-en="I enjoy discovering new cities, cultures and places I have never experienced before.">
+
+                I enjoy discovering new cities, cultures
+                and places I have never experienced before.
+
+            </p>
+
+        </article>
+
+
+        <article class="hobby-card">
+
+            <span class="hobby-number">03</span>
+
+            <div class="hobby-icon">
+                🎧
+            </div>
+
+            <h3
+                data-tr="Müzik"
+                data-en="Music">
+                Music
+            </h3>
+
+            <p
+                data-tr="Farklı müzik türlerini dinlemeyi ve yeni şarkılar ile sanatçılar keşfetmeyi seviyorum."
+                data-en="I enjoy listening to different genres and discovering new songs and artists.">
+
+                I enjoy listening to different genres
+                and discovering new songs and artists.
+
+            </p>
+
+        </article>
+
+
+        <article class="hobby-card">
+
+            <span class="hobby-number">04</span>
+
+            <div class="hobby-icon">
+                💻
+            </div>
+
+            <h3
+                data-tr="Teknoloji"
+                data-en="Technology">
+                Technology
+            </h3>
+
+            <p
+                data-tr="Web teknolojileri, GIS araçları, yeni yazılımlar ve dijital üretim yöntemlerini keşfetmekten keyif alıyorum."
+                data-en="I enjoy exploring web technologies, GIS tools, new software and digital creation methods.">
+
+                I enjoy exploring web technologies,
+                GIS tools, new software and digital creation methods.
+
+            </p>
+
+        </article>
+
+    </div>
+
+</section>
+
+</main>
+
+
+<footer>
+
+    <div>
+        <strong>Rabia Demir</strong>
+        <p data-en="Geomatics Engineering Student" data-tr="Geomatik Mühendisliği Öğrencisi">Geomatics Engineering Student</p>
+    </div>
+
+    <div class="footer-links">
+        <a href="index.html" data-en="Home" data-tr="Ana Sayfa">Home</a>
+        <a href="projects.html" data-en="Projects" data-tr="Projeler">Projects</a>
+        <a href="hobbies.html" data-en="Hobbies" data-tr="Hobiler">Hobbies</a>
+    </div>
+
+</footer>
+
+<script src="language.js"></script>
+
 </body>
 </html>

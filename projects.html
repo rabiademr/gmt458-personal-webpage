@@ -1,27 +1,386 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projeler</title>
-</head>
-<body>
-    <header>
-        <h1>Projeler</h1>
-    </header>
-    <nav aria-label="Ana menü">
-    <a href="index.html">Ana Sayfa</a> |
-    <a href="about.html">Hakkımda</a> |
-    <a href="projects.html">Projeler</a> |
-    <a href="maps.html">Haritalar</a> |
-    <a href="hobbies.html">Hobiler</a>
-</nav>
 
-    <main>
-        <section>
-            <h2>Proje Çalışmalarım</h2>
-            <p>Proje açıklamaları ve görseller daha sonra eklenecek.</p>
-        </section>
-    </main>
+    <title>Projects | Rabia Demir</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="navbar">
+
+    <a href="index.html" class="logo">RD.</a>
+
+    <div class="nav-right">
+
+        <nav class="main-nav">
+
+            <a
+                href="index.html"
+                data-tr="Ana Sayfa"
+                data-en="Home">
+                Home
+            </a>
+
+            <a
+                href="about.html"
+                data-tr="Hakkımda"
+                data-en="About">
+                About
+            </a>
+
+            <a
+                href="projects.html" class="active" aria-current="page"
+                data-tr="Projeler"
+                data-en="Projects">
+                Projects
+            </a>
+
+            <div class="dropdown">
+
+                <button
+                    class="dropdown-button"
+                    type="button"
+                    data-tr="Haritalar"
+                    data-en="Maps">
+                    Maps
+                </button>
+
+                <div class="dropdown-menu">
+                    <a href="leaflet.html">Leaflet</a>
+                    <a href="openlayers.html">OpenLayers</a>
+                </div>
+
+            </div>
+
+            <a
+                href="hobbies.html"
+                data-tr="Hobiler"
+                data-en="Hobbies">
+                Hobbies
+            </a>
+
+        </nav>
+
+        <div class="language-switch">
+
+            <button
+                id="tr-button"
+                type="button"
+                onclick="setLanguage('tr')">
+                TR
+            </button>
+
+            <button
+                id="en-button"
+                type="button"
+                onclick="setLanguage('en')">
+                EN
+            </button>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<main>
+
+    <!-- HERO -->
+
+    <section class="page-hero">
+
+        <p
+            class="section-label"
+            data-tr="PROJELER"
+            data-en="PROJECTS">
+            PROJECTS
+        </p>
+
+        <h1 data-en="Selected geospatial work." data-tr="Seçili mekânsal çalışmalar.">Selected geospatial work.</h1>
+
+        <p
+            data-tr="Uzaktan algılama, uydu görüntüleri, tarımsal analiz ve Web GIS alanlarında geliştirdiğim seçili çalışmalar."
+            data-en="Selected work in remote sensing, satellite imagery, agricultural analysis and Web GIS.">
+
+            Selected work in remote sensing, satellite imagery,
+            agricultural analysis and Web GIS.
+
+        </p>
+
+    </section>
+
+
+    <!-- ======================================
+         PROJECT 01
+         CROP MASKING
+    ======================================= -->
+
+    <section class="section">
+
+        <div class="project-detail">
+
+            <div class="project-index">
+                01
+            </div>
+
+            <div class="project-detail-content">
+
+                <div class="project-tags">
+
+                    <span data-en="Remote Sensing" data-tr="Uzaktan Algılama">Remote Sensing</span>
+                    <span>Sentinel-2</span>
+                    <span>NDVI</span>
+                    <span>Google Earth Engine</span>
+                    <span data-en="Crop Mapping" data-tr="Tarım Alanı Haritalama">Crop Mapping</span>
+
+                </div>
+
+
+                <h2>
+                    Wadi As-Sirhan Crop Masking
+                </h2>
+
+
+                <p class="project-location" data-en="Saudi Arabia · 2020–2024" data-tr="Suudi Arabistan · 2020–2024">
+                    Saudi Arabia · 2020–2024
+                </p>
+
+
+                <p
+                    data-tr="Sentinel-2 görüntüleri ve NDVI zaman serileri kullanılarak Wadi As-Sirhan bölgesindeki pivot tarım alanlarının belirlenmesi ve 2020–2024 dönemindeki zamansal değişiminin incelendiği uzaktan algılama çalışması."
+                    data-en="A remote sensing study identifying pivot agricultural areas in Wadi As-Sirhan using Sentinel-2 imagery and NDVI time series, while examining temporal changes between 2020 and 2024.">
+
+                    A remote sensing study identifying pivot agricultural
+                    areas in Wadi As-Sirhan using Sentinel-2 imagery
+                    and NDVI time series, while examining temporal
+                    changes between 2020 and 2024.
+
+                </p>
+
+
+                <div class="metrics-grid">
+
+                    <div>
+                        <strong>2020–2024</strong>
+                        <span data-en="Analysis Period" data-tr="Analiz Dönemi">Analysis Period</span>
+                    </div>
+
+                    <div>
+                        <strong>NDVI</strong>
+                        <span data-en="Vegetation Index" data-tr="Bitki Örtüsü İndeksi">Vegetation Index</span>
+                    </div>
+
+                    <div>
+                        <strong>20.90 km²</strong>
+                        <span data-en="Peak Area · Apr 2023" data-tr="En Yüksek Alan · Nisan 2023">Peak Area · Apr 2023</span>
+                    </div>
+
+                </div>
+
+
+                <div class="method-box">
+
+                    <strong
+                        data-tr="Yöntem"
+                        data-en="Method">
+                        Method
+                    </strong>
+
+                    <p>
+                        Sentinel-2 L2A · SCL Cloud Masking ·
+                        Monthly Median · NDVI · Threshold-based Crop Masking
+                    </p>
+
+                </div>
+
+
+                <a
+                    href="assets/documents/06_Report/crop_masking_assignment_rabiademir.pdf"
+                    class="button primary"
+                    target="_blank"
+                    rel="noopener"
+                    data-tr="Crop Masking PDF'ini Aç"
+                    data-en="Open Crop Masking PDF">
+
+                    Open Crop Masking PDF
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ======================================
+         PROJECT 02
+         GEOINSIGHT WEB PLATFORM
+    ======================================= -->
+
+    <section class="section">
+
+        <div class="project-detail">
+
+            <div class="project-index">
+                02
+            </div>
+
+            <div class="project-detail-content">
+
+                <div class="project-tags">
+
+                    <span>Web GIS</span>
+                    <span data-en="Remote Sensing" data-tr="Uzaktan Algılama">Remote Sensing</span>
+                    <span>Sentinel-2</span>
+                    <span data-en="Phenology" data-tr="Fenoloji">Phenology</span>
+                    <span data-en="Water Management" data-tr="Su Yönetimi">Water Management</span>
+
+                </div>
+
+
+                <h2>
+                    GEOINSIGHT
+                    <br>
+                    Wadi As-Sirhan Web Platform
+                </h2>
+
+
+                <p class="project-location" data-en="Web-based Agricultural Remote Sensing Platform" data-tr="Web Tabanlı Tarımsal Uzaktan Algılama Platformu">
+                    Web-based Agricultural Remote Sensing Platform
+                </p>
+
+
+                <p
+                    data-tr="Wadi As-Sirhan crop masking çalışmasından elde edilen deneyim ve analiz yaklaşımının geliştirilmesiyle oluşturulan, ancak ayrı bir çalışma olarak tasarlanan web tabanlı tarımsal uzaktan algılama platformu."
+                    data-en="A separate web-based agricultural remote sensing platform developed by extending the analytical concepts and experience gained from the Wadi As-Sirhan crop masking study.">
+
+                    A separate web-based agricultural remote sensing
+                    platform developed by extending the analytical
+                    concepts and experience gained from the
+                    Wadi As-Sirhan crop masking study.
+
+                </p>
+
+
+                <p
+                    data-tr="Platform; uydu görüntüsü analizi, parsel yönetimi, otomatik tarla tespiti, fenoloji, çok yıllı trend, nem izleme, sulama ihtiyacı hesabı ve senaryo tabanlı su yönetimini tek bir etkileşimli harita arayüzünde birleştirir."
+                    data-en="The platform integrates satellite imagery analysis, parcel management, automatic field detection, phenology, multi-year trends, moisture monitoring, irrigation requirement calculations and scenario-based water management within one interactive map interface.">
+
+                    The platform integrates satellite imagery analysis,
+                    parcel management, automatic field detection,
+                    phenology, multi-year trends, moisture monitoring,
+                    irrigation requirement calculations and
+                    scenario-based water management.
+
+                </p>
+
+
+                <div class="metrics-grid">
+
+                    <div>
+                        <strong>9</strong>
+                        <span data-en="Analysis Modules" data-tr="Analiz Modülleri">Analysis Modules</span>
+                    </div>
+
+                    <div>
+                        <strong>NDVI · EVI · NDMI</strong>
+                        <span data-en="Spectral Indices" data-tr="Spektral İndeksler">Spectral Indices</span>
+                    </div>
+
+                    <div>
+                        <strong>Web GIS</strong>
+                        <span data-en="Interactive Platform" data-tr="Etkileşimli Platform">Interactive Platform</span>
+                    </div>
+
+                </div>
+
+
+                <div class="method-box">
+
+                    <strong
+                        data-tr="Web Platform Modülleri"
+                        data-en="Web Platform Modules">
+                        Web Platform Modules
+                    </strong>
+
+                    <p>
+                        Satellite Imagery · Parcel Management ·
+                        Automatic Field Detection · Phenology Analysis ·
+                        Multi-Year Trend · Crop Classification ·
+                        Moisture Monitoring · Water Requirement ·
+                        Water Management
+                    </p>
+
+                </div>
+
+
+                <a
+                    href="assets/documents/06_Report/Wadi_As_Sirhan_Pivot_Crop_Mapping_Web_Arayuz_Raporu.pdf"
+                    class="button primary"
+                    target="_blank"
+                    rel="noopener"
+                    data-tr="Web Platform PDF'ini Aç"
+                    data-en="Open Web Platform PDF">
+
+                    Open Web Platform PDF
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+<section class="section"><div class="skill-table-wrapper"><table class="skill-table"><caption data-en="Crop Masking: selected results" data-tr="Crop Masking: seçili sonuçlar">Crop Masking: selected results</caption><thead><tr><th scope="col" data-en="Figure" data-tr="Görsel">Figure</th><th scope="col" data-en="Analysis" data-tr="Analiz">Analysis</th><th scope="col" data-en="Period" data-tr="Dönem">Period</th></tr></thead><tbody><tr><td><a href="assets/images/08_Five_Year_Crop_Area_Time_Series.png"><img src="assets/images/08_Five_Year_Crop_Area_Time_Series.png" alt="Monthly cropped area" loading="lazy" width="300"></a></td><th scope="row" data-en="Monthly cropped area" data-tr="Aylık ekili alan">Monthly cropped area</th><td>2020–2024</td></tr><tr><td><a href="assets/images/09_Representative_Seasonal_Crop_Masks.png"><img src="assets/images/09_Representative_Seasonal_Crop_Masks.png" alt="Seasonal crop masks" loading="lazy" width="300"></a></td><th scope="row" data-en="Seasonal crop masks" data-tr="Mevsimsel tarım alanı maskeleri">Seasonal crop masks</th><td>2020–2024</td></tr></tbody></table></div></section>
+</main>
+
+
+<footer>
+
+    <div>
+
+        <strong>
+            Rabia Demir
+        </strong>
+
+        <p data-en="Geomatics Engineering Student" data-tr="Geomatik Mühendisliği Öğrencisi">
+            Geomatics Engineering Student
+        </p>
+
+    </div>
+
+
+    <div class="footer-links">
+
+        <a href="index.html" data-en="Home" data-tr="Ana Sayfa">
+            Home
+        </a>
+
+        <a href="about.html" data-en="About" data-tr="Hakkımda">
+            About
+        </a>
+
+        <a href="hobbies.html" data-en="Hobbies" data-tr="Hobiler">
+            Hobbies
+        </a>
+
+    </div>
+
+</footer>
+
+
+<script src="language.js"></script>
+
 </body>
+
 </html>

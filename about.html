@@ -1,37 +1,190 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hakkımda</title>
+
+    <title>About | Rabia Demir</title>
+
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <header>
-        <h1>Hakkımda</h1>
-    </header>
-    <nav aria-label="Ana menü">
-    <a href="index.html">Ana Sayfa</a> |
-    <a href="about.html">Hakkımda</a> |
-    <a href="projects.html">Projeler</a> |
-    <a href="maps.html">Haritalar</a> |
-    <a href="hobbies.html">Hobiler</a>
-</nav>
 
-    <main>
-        <section>
-            <h2>Kişisel Bilgiler</h2>
-            <p>Daha sonra eklenecek.</p>
-        </section>
+<header class="navbar">
 
-        <section>
-            <h2>Yetenekler ve Teknolojiler</h2>
-            <p>Daha sonra eklenecek.</p>
-        </section>
+    <a href="index.html" class="logo">RD.</a>
 
-        <section>
-            <h2>Yolculuğum</h2>
-            <p>Daha sonra eklenecek.</p>
-        </section>
-    </main>
+    <div class="nav-right">
+
+        <nav class="main-nav">
+
+            <a
+                href="index.html"
+                data-tr="Ana Sayfa"
+                data-en="Home">
+                Home
+            </a>
+
+            <a
+                href="about.html" class="active" aria-current="page"
+                data-tr="Hakkımda"
+                data-en="About">
+                About
+            </a>
+
+            <a
+                href="projects.html"
+                data-tr="Projeler"
+                data-en="Projects">
+                Projects
+            </a>
+
+            <div class="dropdown">
+
+                <button
+                    class="dropdown-button"
+                    type="button"
+                    data-tr="Haritalar"
+                    data-en="Maps">
+                    Maps
+                </button>
+
+                <div class="dropdown-menu">
+                    <a href="leaflet.html">Leaflet</a>
+                    <a href="openlayers.html">OpenLayers</a>
+                </div>
+
+            </div>
+
+            <a
+                href="hobbies.html"
+                data-tr="Hobiler"
+                data-en="Hobbies">
+                Hobbies
+            </a>
+
+        </nav>
+
+        <div class="language-switch">
+
+            <button
+                id="tr-button"
+                type="button"
+                onclick="setLanguage('tr')">
+                TR
+            </button>
+
+            <button
+                id="en-button"
+                type="button"
+                onclick="setLanguage('en')">
+                EN
+            </button>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<main>
+
+    <section class="page-hero">
+
+        <p
+            class="section-label"
+            data-tr="HAKKIMDA"
+            data-en="ABOUT ME">
+            ABOUT ME
+        </p>
+
+        <h1 data-en="Geomatics, Earth observation &amp; spatial technologies." data-tr="Geomatik, yer gözlemi ve mekânsal teknolojiler.">Geomatics, Earth observation & spatial technologies.</h1>
+
+        <p
+            data-tr="Hacettepe Üniversitesi Geomatik Mühendisliği öğrencisiyim. Özellikle uzaktan algılama, CBS, fotogrametri ve Web GIS alanlarıyla ilgileniyorum."
+            data-en="I am a Geomatics Engineering student at Hacettepe University with a particular interest in Remote Sensing, GIS, Photogrammetry and Web GIS.">
+
+            I am a Geomatics Engineering student at Hacettepe University
+            with a particular interest in Remote Sensing, GIS,
+            Photogrammetry and Web GIS.
+
+        </p>
+
+    </section>
+
+
+    <section class="section">
+
+        <div class="about-grid">
+
+            <div>
+
+                <p
+                    class="section-label"
+                    data-tr="PROFİL"
+                    data-en="PROFILE">
+                    PROFILE
+                </p>
+
+                <h2
+                    class="section-title"
+                    data-tr="Mekânsal teknolojilere odaklanıyorum."
+                    data-en="Focused on spatial technologies.">
+                    Focused on spatial technologies.
+                </h2>
+
+            </div>
+
+
+            <div class="about-text">
+
+                <p
+                    data-tr="Çalışmalarımda uydu görüntüleri, mekânsal veri analizi, CBS tabanlı uygulamalar ve web haritalama teknolojilerini kullanıyorum."
+                    data-en="My work focuses on satellite imagery, spatial data analysis, GIS-based applications and web mapping technologies.">
+
+                    My work focuses on satellite imagery, spatial data
+                    analysis, GIS-based applications and web mapping technologies.
+
+                </p>
+
+                <p
+                    data-tr="QGIS, ArcGIS Pro, Google Earth Engine, Python, PostgreSQL/PostGIS, Agisoft Metashape ve Pix4D gibi araçlarla çalışıyorum."
+                    data-en="I work with tools including QGIS, ArcGIS Pro, Google Earth Engine, Python, PostgreSQL/PostGIS, Agisoft Metashape and Pix4D.">
+
+                    I work with tools including QGIS, ArcGIS Pro,
+                    Google Earth Engine, Python, PostgreSQL/PostGIS,
+                    Agisoft Metashape and Pix4D.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<footer>
+
+    <div>
+        <strong>Rabia Demir</strong>
+        <p data-en="Geomatics Engineering Student" data-tr="Geomatik Mühendisliği Öğrencisi">Geomatics Engineering Student</p>
+    </div>
+
+    <div class="footer-links">
+        <a href="index.html" data-en="Home" data-tr="Ana Sayfa">Home</a>
+        <a href="projects.html" data-en="Projects" data-tr="Projeler">Projects</a>
+        <a href="hobbies.html" data-en="Hobbies" data-tr="Hobiler">Hobbies</a>
+    </div>
+
+</footer>
+
+<script src="language.js"></script>
+
 </body>
 </html>
