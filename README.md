@@ -127,8 +127,8 @@ Specific concepts explained with AI assistance: using zoom events to control mar
 
 1. Enter the honest total AI usage estimate above.
 2. Complete meaningful work and commit on a third distinct calendar day, e.g. 10 October; do not backdate commits.
-3. After deployment, test all pages, maps and PDFs at the live URL, including on a phone.
-4. Complete desktop/mobile map interaction checks, including popups and threshold 9/10, on the deployed site.
+3. Browser mobile checks and live PDF checks completed on 9 October; perform a final real-phone check before submission.
+4. Live map popups, date selection, basemap switching and Leaflet threshold 9/10 checked on 9 October. OpenLayers threshold and world-wrap settings verified in source; final world-edge interaction check remains.
 5. Register at https://gmt458.hacettepe.edu.tr/ and review three assigned peers by 23 October. The brief states 85% instructor / 15% blind peer evaluation and requires detailed feedback.
 
 Gym Center marker uses the approximate YDA Park Avenue complex center (39.96832, 32.77375), not an exact entrance. Coordinate source: https://mapcarta.com/W606411043 . Venue: https://centergym.com.tr/yda-park-avenue/ . Use the user-supplied Google Maps link for navigation.
@@ -155,3 +155,7 @@ Internship update: About includes MAPEG and the 2026 YMN internship. YMN descrip
 Bozcaada: user-supplied photography hobby image, reused in the Leaflet popup. Caption: “The place where I feel I belong, every time.” Coordinates [39.8172, 26.0227] represent the island, not the exact photograph location. Location source: https://mapcarta.com/Bozcaada .
 
 Cappadocia: user-supplied photo appears in the Photography hobby and Leaflet popup with a bilingual personal caption. Coordinates [38.6421, 34.8296] represent Göreme in Cappadocia, not the exact photo location. Source: https://mapcarta.com/G%C3%B6reme .
+
+## End-of-day review — 9 October 2026
+
+See [ASSIGNMENT_REVIEW.md](ASSIGNMENT_REVIEW.md) for the verified requirement checklist, live test results, commit dates and remaining submission steps.
