@@ -1425,3 +1425,9 @@ footer p {
 .photography-grid figcaption p { font-size: .9rem; }
 @media (max-width: 1000px) { .photography-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 620px) { .photography-grid { grid-template-columns: 1fr; } .photography-grid img { height: auto; max-height: 440px; object-fit: contain; } }
+
+/* Preserve the full framing of the personal activity photographs. */
+#ahalteke-hobby .hobby-photo,
+#eymir-hobby .hobby-photo,
+#mixology .hobby-photo,
+#erciyes-hobby .hobby-photo { object-fit: contain; background: #101b24; }

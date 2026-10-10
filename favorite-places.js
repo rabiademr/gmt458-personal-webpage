@@ -88,5 +88,53 @@ const favoritePlaces = [
     "source": "https://mapcarta.com/G%C3%B6reme",
     "image": "assets/images/cappadocia.jpeg",
     "maps": "https://www.google.com/maps/search/?api=1&query=Cappadocia+Goreme"
+  },
+  {
+    "id": "ahalteke",
+    "name": "Ahal Teke Tenis Kulübü",
+    "coordinates": [
+      39.9329,
+      32.8122
+    ],
+    "address": "Emniyet · Alparslan Türkeş Caddesi No:12 · Ankara",
+    "tr": "Ahal Teke’de tenis oynamayı, kortta hareket etmeyi ve oyunumu geliştirmeyi seviyorum.",
+    "en": "I enjoy playing tennis at Ahal Teke, staying active on court and improving my game.",
+    "source": "https://www.ahalteketeniskulubu.com/",
+    "image": "assets/images/ahalteke-tennis.jpeg",
+    "noteTr": "Kulübün sitesindeki yaklaşık tesis konumu; belirli bir kortun konumu değildir.",
+    "noteEn": "Approximate facility location from the club website, not a specific court.",
+    "maps": "https://www.google.com/maps/search/?api=1&query=39.9329,32.8122"
+  },
+  {
+    "id": "eymir",
+    "name": "Eymir Gölü",
+    "coordinates": [
+      39.82522,
+      32.82758
+    ],
+    "address": "Eymir Gölü · Ankara",
+    "tr": "Eymir’de bisiklet sürmeyi ve göl çevresinde doğayla vakit geçirmeyi seviyorum.",
+    "en": "I enjoy cycling at Lake Eymir and spending time in nature around the lake.",
+    "source": "https://geographic.org/geographic_names/name.php?c=turkey&fid=6202&uni=9163815",
+    "image": "assets/images/eymir-cycling.jpeg",
+    "noteTr": "Gölü temsil eden nokta; fotoğrafın çekildiği tam konum değildir.",
+    "noteEn": "A representative lake location, not the exact photo location.",
+    "maps": "https://www.google.com/maps/search/?api=1&query=39.82522,32.82758"
+  },
+  {
+    "id": "erciyes",
+    "name": "Erciyes Kayak Merkezi",
+    "coordinates": [
+      38.55875,
+      35.49291
+    ],
+    "address": "Erciyes · Kayseri",
+    "tr": "Erciyes’te kayak yapmayı, kışın dağda vakit geçirmeyi ve pistlerde kendimi geliştirmeyi seviyorum.",
+    "en": "I enjoy skiing at Erciyes, spending winter days in the mountains and improving on the slopes.",
+    "source": "https://mapcarta.com/W815651521",
+    "image": "assets/images/erciyes-skiing.jpeg",
+    "noteTr": "Kayak bölgesini temsil eden nokta; fotoğrafın veya belirli bir pistin tam konumu değildir.",
+    "noteEn": "A representative ski-area location, not the exact photo location or a specific slope.",
+    "maps": "https://www.google.com/maps/search/?api=1&query=38.55875,35.49291"
   }
 ];

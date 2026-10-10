@@ -11,7 +11,7 @@ Personal portfolio for GMT458 Web GIS, Hacettepe University. Built with HTML, CS
 - `leaflet.html`: favorite places map with Gym Center Park Avenue and a user-supplied squash photo.
 - `openlayers.html`: OpenLayers 10.6.1 map. `maps.html` provides the same working map for existing links.
 
-OpenLayers shows academic project locations; Leaflet shows six favorite hobby venues with personal photos. Markers are hidden below zoom 10 and visible at zoom 10 or above. Leaflet uses `noWrap`, geographic bounds and a minimum zoom. OpenLayers uses OSM and Esri `wrapX: false` and a constrained view extent to prevent repeated worlds. Wadi coordinates are approximated from the included AOI. External map libraries and tiles require internet access.
+OpenLayers shows academic project and internship locations; Leaflet shows eleven personal places with personal photos. Markers are hidden below zoom 10 and visible at zoom 10 or above. Leaflet uses `noWrap`, geographic bounds and a minimum zoom. OpenLayers uses OSM and Esri `wrapX: false` and a constrained view extent to prevent repeated worlds. Wadi coordinates are approximated from the included AOI. External map libraries and tiles require internet access.
 
 TR/EN selection is stored locally and applied on subsequent pages. Some proper names and technical method names remain in English. CSS provides entry animations, responsive layouts, focus indicators and a reduced-motion alternative.
 
@@ -93,7 +93,7 @@ Check all pages in both languages at mobile and desktop widths. On each map, zoo
 
 Repository: https://github.com/rabiademr/gmt458-personal-webpage
 
-Expected Pages URL: https://rabiademr.github.io/gmt458-personal-webpage/
+Live Pages URL: https://rabiademr.github.io/gmt458-personal-webpage/
 
 GitHub Pages was enabled on 9 October 2026 from main → /(root). The live homepage, Hobbies and About pages were confirmed accessible. New changes appear after pushing and successful deployment. All local resource URLs are relative to support the repository subpath.
 
@@ -128,10 +128,10 @@ No unsupported prior independent search history is claimed. The brief asks stude
 ## Remaining before submission
 
 1. AI usage estimate recorded above: approximately 10 hours, confirmed by Rabia.
-2. Third-day work on 10 October: reorganized the photography gallery into four desktop columns, two tablet columns and one mobile column. Commit and remote publication must both be confirmed.
+2. Third-day work on 10 October: reorganized the photography gallery into four desktop columns, two tablet columns and one mobile column. Third-day commit d3ee79d is saved locally; remote publication is checked separately.
 3. Browser mobile checks and live PDF checks completed on 9 October; perform a final real-phone check before submission.
 4. Live map popups, date selection, basemap switching and Leaflet threshold 9/10 checked on 9 October. OpenLayers threshold and world-wrap settings verified in source; final world-edge interaction check remains.
-5. Register at https://gmt458.hacettepe.edu.tr/ and review three assigned peers by 23 October. The brief states 85% instructor / 15% blind peer evaluation and requires detailed feedback.
+5. Review-system registration is complete. Confirm the test-link record, submit to the formal project area and review three assigned peers by 23 October. The brief states 85% instructor / 15% blind peer evaluation and requires detailed feedback.
 
 Gym Center marker uses the approximate YDA Park Avenue complex center (39.96832, 32.77375), not an exact entrance. Coordinate source: https://mapcarta.com/W606411043 . Venue: https://centergym.com.tr/yda-park-avenue/ . Use the user-supplied Google Maps link for navigation.
 
@@ -165,3 +165,5 @@ See [ASSIGNMENT_REVIEW.md](ASSIGNMENT_REVIEW.md) for the verified requirement ch
 ## Third-day review — 10 October 2026
 
 The photography collection now occupies a full-width hobby card with four desktop columns, two tablet columns and one mobile column. Bozcaada and Cappadocia captions and map anchors are preserved. The revised gallery was visually inspected at 1280 px; at 390 px the page width and document width both measured 390 px, with a single 300 px gallery column. Local HTML asset/link targets were checked again with no missing files. Live OpenLayers and About pages loaded during this review; the final world-edge interaction test and physical-phone test remain outstanding. Yesterday’s unpushed audit commit and the confirmed AI usage disclosure are included in the saved work.
+
+Hobby update — 10 October: added user-supplied tennis, cycling, mixology and skiing photographs with first-person TR/EN descriptions. Ahal Teke, Lake Eymir and Erciyes also appear in Favorite Places and Leaflet photo popups. The club coordinate [39.9329, 32.8122] comes from https://www.ahalteketeniskulubu.com/ structured data; Eymir [39.82522, 32.82758] from https://geographic.org/geographic_names/name.php?c=turkey&fid=6202&uni=9163815 ; Erciyes [38.55875, 35.49291] from https://mapcarta.com/W815651521 . These are representative facility/area locations, not inferred photo locations.
