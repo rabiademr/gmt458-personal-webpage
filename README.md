@@ -110,7 +110,7 @@ Source: `a1_web_page.pdf`, Assignment 1. Submission: 12 October 2026. Peer revie
 | Leaflet map | 10% | Implemented | Shared navigation and language controls added |
 | Zoom threshold for markers | 10% | Implemented | Threshold 10 preserved in both maps |
 | Prevent repeating Earth | 10% | Implemented | noWrap / wrapX and view constraints preserved |
-| At least three commits on different days | 5% | Two commits, both 5 October | Day 2 commit on 9 October; a third distinct day remains |
+| At least three commits on different days | 5% | Two commits, both 5 October | Work recorded on 5 and 9 October; third-day gallery update on 10 October |
 | Overall quality | 10% | Inconsistent navigation and translations | Navigation, mobile dropdown, headings and footer translations improved |
 
 TR/EN, the exact page names and project PDFs are portfolio requirements; the brief does not individually require them. It does require GitHub hosting, mentions GitHub Pages as a tutorial, and explicitly requires AI disclosure in README.
@@ -121,12 +121,14 @@ ChatGPT helped develop the page structure, styling, TR/EN interface and project 
 
 Specific concepts explained with AI assistance: using zoom events to control marker visibility; disabling map world wrapping; keeping language preference in localStorage; distinguishing a local file path from an HTML link; using relative paths for GitHub Pages; touch and keyboard access for a dropdown.
 
-**Total AI usage estimate: awaiting Rabia's estimate of prior ChatGPT work plus this Codex session. This must be filled in before submission.** No unsupported duration or prior independent search history is claimed. The brief asks students to research problems first and use AI for unresolved issues.
+Estimated total AI-assisted working time: approximately 10 hours across multiple sessions. This is a rough estimate, not a timed measurement. I used ChatGPT and Codex for HTML/CSS development, JavaScript map interactions, bilingual content, debugging, documentation and testing.
+
+No unsupported prior independent search history is claimed. The brief asks students to research problems first and use AI for unresolved issues.
 
 ## Remaining before submission
 
-1. Enter the honest total AI usage estimate above.
-2. Complete meaningful work and commit on a third distinct calendar day, e.g. 10 October; do not backdate commits.
+1. AI usage estimate recorded above: approximately 10 hours, confirmed by Rabia.
+2. Third-day work on 10 October: reorganized the photography gallery into four desktop columns, two tablet columns and one mobile column. Commit and remote publication must both be confirmed.
 3. Browser mobile checks and live PDF checks completed on 9 October; perform a final real-phone check before submission.
 4. Live map popups, date selection, basemap switching and Leaflet threshold 9/10 checked on 9 October. OpenLayers threshold and world-wrap settings verified in source; final world-edge interaction check remains.
 5. Register at https://gmt458.hacettepe.edu.tr/ and review three assigned peers by 23 October. The brief states 85% instructor / 15% blind peer evaluation and requires detailed feedback.
@@ -159,3 +161,7 @@ Cappadocia: user-supplied photo appears in the Photography hobby and Leaflet pop
 ## End-of-day review — 9 October 2026
 
 See [ASSIGNMENT_REVIEW.md](ASSIGNMENT_REVIEW.md) for the verified requirement checklist, live test results, commit dates and remaining submission steps.
+
+## Third-day review — 10 October 2026
+
+The photography collection now occupies a full-width hobby card with four desktop columns, two tablet columns and one mobile column. Bozcaada and Cappadocia captions and map anchors are preserved. The revised gallery was visually inspected at 1280 px; at 390 px the page width and document width both measured 390 px, with a single 300 px gallery column. Local HTML asset/link targets were checked again with no missing files. Live OpenLayers and About pages loaded during this review; the final world-edge interaction test and physical-phone test remain outstanding. Yesterday’s unpushed audit commit and the confirmed AI usage disclosure are included in the saved work.

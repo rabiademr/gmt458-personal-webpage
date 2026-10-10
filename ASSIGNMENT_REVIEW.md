@@ -1,4 +1,4 @@
-# GMT458 end-of-day review — 9 October 2026
+# GMT458 assignment review — updated 10 October 2026
 
 Source: user-provided a1_web_page.pdf (2 pages). Due 12 October 2026; formal peer reviews due 23 October 2026.
 
@@ -11,11 +11,11 @@ Source: user-provided a1_web_page.pdf (2 pages). Due 12 October 2026; formal pee
 | Leaflet map (10%) | Personal places with photo popups and navigation buttons | Complete |
 | Zoom threshold (10%) | Both implementations use zoom >= 10; Leaflet verified at 10 and 9 live | Implemented; OL source verified |
 | Prevent Earth repetition (10%) | Leaflet noWrap and bounds; OL wrapX:false and constrained extent | Implemented; final world-edge visual check remains |
-| 3 commits on different days (5%) | History currently contains 5 October and 9 October | Third distinct day still required |
+| 3 commits on different days (5%) | History contains 5 and 9 October; gallery improvements made 10 October | Third-day commit prepared; verify push |
 | Overall quality (10%) | Consistent navigation, TR/EN, responsive layout, real personal/project content | Reviewed; grading remains instructor judgement |
 | GitHub hosting | Public repo and live GitHub Pages site | Complete |
 | Explain specific AI learning in README | Map events, wrapping, relative paths, language storage and assistance scope documented | Complete |
-| Estimate total AI usage | README still awaits honest minutes/hours estimate | Pending user input |
+| Estimate total AI usage | Approximately 10 hours across multiple sessions, confirmed by Rabia; rough estimate, not timed | Complete |
 | Research problems before AI | Brief requirement documented; do not invent past independent research | User should ensure account is accurate |
 | Review-system registration | User successfully logged in | Complete |
 | Register test link | Selecting test project causes loading error and form disappears in supplied screenshots | Not confirmed; report to instructor/assistant |
@@ -29,7 +29,7 @@ Source: user-provided a1_web_page.pdf (2 pages). Due 12 October 2026; formal pee
 - Personal Leaflet locations including Bozcaada and Cappadocia, plus photography/travel galleries, pottery and food preparation hobbies.
 - English first-person README explanation of library choices, data/photo connections and AI assistance.
 
-## Verification completed today
+## Verification completed on 9 October
 
 - Live Home, About, Projects, Leaflet and OpenLayers tested at 390 px browser width with no horizontal page overflow.
 - Hobbies tested at 320 px; galleries stack and four new gallery photographs load.
@@ -57,8 +57,17 @@ Multiple commits on 9 October count as one calendar day for the distinct-days re
 
 ## Next session
 
-1. Fill the honest total AI usage estimate.
+1. AI usage estimate completed: approximately 10 hours, confirmed by Rabia.
 2. Test on a physical phone and visually check world-edge wrapping / OpenLayers zoom threshold.
-3. Make a meaningful improvement or document those completed checks on a third calendar day, then commit and push.
+3. Third-day gallery improvements completed on 10 October; commit all pending changes and confirm the push.
 4. Resolve/report the review portal error and confirm the saved link; this is separate from the working portfolio website.
 5. Submit to the formal project area, then complete the three required peer reviews by the deadline.
+
+## 10 October update
+
+- Reorganized Photography as a full-width card with four desktop / two tablet / one mobile columns.
+- Preserved all four photographs, personal captions and Bozcaada/Cappadocia map anchors.
+- Desktop gallery visually inspected at 1280 px; mobile DOM check at 390 px found no horizontal overflow and one gallery column.
+- Rechecked local HTML links/assets: no missing targets.
+- Live OpenLayers and About loaded; no new claim is made for the outstanding world-edge or physical-phone tests.
+- Include the unpushed 9 October audit commit and confirmed approximately 10-hour AI disclosure when publishing.
