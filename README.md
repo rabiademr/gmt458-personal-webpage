@@ -1,102 +1,136 @@
-# Rabia Demir — GMT458 Kişisel Web Sayfam
+# Rabia Demir — GMT458 Personal Web Page
 
-Bu siteyi Hacettepe Üniversitesi GMT458 Web GIS dersi için hazırladım. Kendimi, projelerimi, stajlarımı ve sevdiğim yerleri aynı yerde anlatmak istedim. HTML, CSS ve JavaScript kullandım; proje doğrudan bir web sunucusunda çalışıyor.
+I created this website for the GMT458 Web GIS course at Hacettepe University. I wanted one place to introduce myself, share my projects and internships, and show the places and activities I enjoy. The site uses HTML, CSS and JavaScript and runs without a build step.
 
-[Canlı site](https://rabiademr.github.io/gmt458-personal-webpage/) · [GitHub](https://github.com/rabiademr/gmt458-personal-webpage)
+[Live website](https://rabiademr.github.io/gmt458-personal-webpage/) · [GitHub repository](https://github.com/rabiademr/gmt458-personal-webpage)
 
-## Tasarımda ne düşündüm?
+## My design choices
 
-Koyu renkleri ve turkuaz detayları seçtim. Ana sayfada küçük bir portre, iki proje kartı ve kendi fotoğraflarımdan oluşan “Haritaların ötesinde” bölümü var. Ziyaretçinin önce kim olduğumu görmesini, sonra projelerime veya sevdiğim yerlere kolayca ulaşmasını istedim. Fotoğraflardan haritaya doğrudan geçilebiliyor.
+I chose a dark background with turquoise accents. The homepage has a small portrait, two featured projects and a “Beyond the maps” section with my own hobby photographs. I wanted visitors to understand who I am, then easily explore my work or favorite places. The tennis and Bozcaada cards link directly to their locations on the map.
 
-Arka plandaki ince çizgiler haritacılıkla olan bağımı hatırlatıyor. Bölümler kaydırırken bir kez beliriyor; proje görselleri üzerine gelince hafifçe yakınlaşıyor. Destekleyen tarayıcılarda sayfalar arasında kısa bir geçiş var, diğerlerinde normal bağlantılar çalışıyor. Hareketi azaltma tercihi açık olduğunda animasyonları kapatıyorum. Telefonda kartlar alt alta geliyor.
+The subtle contour lines connect the design to my interest in mapping. Sections appear once as visitors scroll, and project covers gently enlarge on hover. Browsers that support cross-document view transitions show a short transition between pages; other browsers use normal navigation. Animations respect the reduced-motion preference, and cards stack on smaller screens.
 
-Portre ve hobi fotoğrafları benim sağladığım gerçek fotoğraflar. Ana sayfadaki iki uydu görünümlü proje kapağı yapay zekâyla üretilmiş temsili görseller; analiz sonucu değiller. Gerçek analiz görselleri, çalışma alanı ve raporlar proje detaylarında ayrı duruyor.
+My portrait and hobby photographs are real images I provided. The two satellite-style homepage covers are AI-generated illustrations, not analysis results. The actual project figures, study boundary and reports are presented separately in the project details.
 
-## Haritaları neden ikiye ayırdım?
+## Why I separated the maps
 
-Ödevde hem OpenLayers hem Leaflet kullanmamız isteniyor. İkisini aynı şey için tekrar etmek yerine farklı amaçlarla kullandım. OpenLayers tarafında akademik çalışmalarımı ve staj kurumlarını; Leaflet tarafında hobilerimi ve sevdiğim yerleri gösteriyorum. Böylece ziyaretçi hangi haritada ne bulacağını daha kolay anlayabiliyor.
+The assignment requires both OpenLayers and Leaflet. I gave them different purposes: OpenLayers presents my academic work and internship institutions, while Leaflet presents my favorite places and hobbies. This makes the navigation easier to understand and lets me explore both libraries.
 
-### OpenLayers: projelerim ve stajlarım
+This is my design choice, not a restriction of either library. Leaflet can display project data, and OpenLayers can also display personal markers and photographs.
 
-Wadi As-Sirhan çalışmamda yalnızca bir konum işaretlemek istemedim. Gerçek çalışma sınırını GeoJSON olarak ekledim. Verinin koordinatlarını web haritasında kullanılan EPSG:3857 sistemine dönüştürdüm. Ocak 2020, Şubat 2020 ve Nisan 2023 tarım alanı maskeleri arasında geçiş yapılabiliyor. Orijinal GeoTIFF çıktıları tarayıcıda gösterilebilen PNG katmanlarına dönüştürüldü; sınıfları korumak için en yakın komşu yöntemi kullanıldı. Tarım alanı sınıfı sarı, diğer pikseller şeffaf.
+### OpenLayers: my projects and internships
 
-Gösterilen alan değerleri orijinal analiz tablosundan geliyor; ekrandaki piksellerden yeniden hesaplanmıyor. Uydu ve sokak altlıkları, katman açma/kapama ve saydamlık kontrolü ekledim. Uydu altlığı seçilen aya ait Sentinel-2 görüntüsü değil; konumu anlamak için kullanılan bir arka plan. Bunu sayfada da belirttim.
+For Wadi As-Sirhan, I wanted to show the actual study area and analysis outputs. I added the original boundary as GeoJSON and transformed its coordinates to EPSG:3857 for the web map. Visitors can choose crop masks from January 2020, February 2020 and April 2023.
 
-Crop Masking ile GEOINSIGHT birbirine bağlı ama ayrı çalışmalarım. Açıklamalarını ve PDF bağlantılarını ayrı tuttum. Haritadaki sınır Crop Masking çalışmasına ait; GEOINSIGHT’ın bütün kapsamını temsil ettiğini söylemiyorum. MAPEG ve YMN için kurum konumları ile staj fotoğraflarını da ekledim. YMN arazi fotoğraflarının kurum ofisinde çekildiği anlamına gelmiyor.
+With AI assistance, the original GeoTIFF outputs were converted into browser-ready PNG overlays. Nearest-neighbor resampling preserved the classification during reprojection. Crop pixels appear in yellow; other pixels are transparent. The displayed area values come from my original analysis table, rather than being recalculated from the displayed overlays.
 
-OpenLayers’ın farklı veri ve katman türlerini bir arada yönetebilmesini bu çalışma için uygun buldum. Buna karşılık kaynak, katman, stil ve projeksiyon ayarlarını öğrenmek daha fazla kod ve zaman gerektirdi.
+I added satellite and street basemaps, layer switches and an opacity slider. The satellite basemap provides context and may contain imagery from different dates; it is not the Sentinel-2 image for the selected analysis month.
 
-### Leaflet: sevdiğim yerler ve hobilerim
+Crop Masking and GEOINSIGHT are related but separate studies, so I kept their descriptions and PDF links separate. The mapped boundary belongs to Crop Masking and does not claim to represent the full coverage of GEOINSIGHT. MAPEG and YMN markers show institutional locations with internship photographs. YMN field photographs do not imply that the fieldwork took place at the office.
 
-Bu haritada on bir kişisel yer var: Gym Center, Rolls’n Smiles, Deli Yengeç, Coffee Break, Bozburun, Etmanyak, Bozcaada, Kapadokya, Ahal Teke, Eymir ve Erciyes. Her birini kendi fotoğrafım ve kısa bir açıklamayla bağladım. İşaretçiye tıklanınca fotoğraf, açıklama ve bağlantılar açılıyor.
+**Advantages for my website:**
 
-Leaflet’in işaretçi ve açılır pencere yapısı bu fikir için kullanışlıydı. Daha karmaşık bir uygulamada ek eklentiler veya özel kod gerekebilir. Leaflet de GeoJSON ve görüntü katmanları gösterebiliyor; iki haritayı ayırmam bir tasarım tercihi.
+- OpenLayers supports tiled, image and vector layers, which suits the combination of basemaps, crop overlays and a GeoJSON boundary.
+- Its source/layer structure gives me control over visibility, styling and opacity.
+- Its projection tools fit the coordinate conversion needed for my study data.
 
-Koordinatları adres ve harita kaynaklarından eşleştirdim. Bazıları kurum, tesis veya bölgeyi temsil eden yaklaşık noktalar. Fotoğrafların tam çekildiği yeri bildiğimi iddia etmiyorum. Kaynakları aşağıya ekledim.
+**Disadvantages I encountered:**
 
-## Fotoğrafları ve bağlantıları nasıl ekledim?
+- Learning sources, layers, styles and projections required more setup and code than my simple personal marker map.
+- The original crop rasters needed preprocessing for this implementation.
+- Date selection, layer controls and popup state add more code to maintain.
 
-Fotoğrafları bilgisayarımdaki Downloads klasörüne bağlamak yerine projenin assets/images klasörüne kopyaladım. Sayfalarda göreli dosya yolları kullandım. Böylece dosyalar GitHub’a birlikte yüklendiğinde fotoğraflar da açılabiliyor. Hobi kartları ve harita pencereleri aynı fotoğraf dosyasını kullanıyor; gereksiz kopyalar oluşturmuyorum. Gerçek fotoğrafları değiştirmedim, yalnızca arayüzdeki boyut ve kırpılmalarını CSS ile ayarladım.
+### Leaflet: my favorite places and hobbies
 
-Örneğin leaflet.html#bozcaada bağlantısı haritada Bozcaada’yı açıyor ve fotoğraflı pencereyi gösteriyor. Google Maps bağlantıları ayrı bir harita hizmetinde konumu açıyor. PDF’ler de proje içindeki göreli yollarla bağlandı. Türkçe/İngilizce tercihimi localStorage ile saklıyorum; sonraki sayfada aynı dil devam ediyor.
+My personal map includes eleven places: Gym Center, Rolls’n Smiles, Deli Yengeç, Coffee Break, Bozburun, Etmanyak, Bozcaada, Cappadocia, Ahal Teke, Lake Eymir and Erciyes. Each place is connected to my photograph, a short description and navigation links.
 
-## Ödevdeki iki harita sorununu nasıl çözdüm?
+**Advantages for my website:**
 
-İşaretçilerin uzaktan görünürken üst üste binmesini azaltmak için iki haritada da yakınlaştırma eşiğini 10 seçtim. Yakınlaştırma değiştiğinde kontrol ediliyor: 10’un altında işaretçiler gizleniyor, 10 ve üzerinde gösteriliyor. Bu çözüm yakın ölçekte birbirine çok yakın bütün noktaları ayırmayı garanti etmiyor; ödevde istenen eşik davranışını uyguluyor.
+- Its straightforward marker and popup API suited my small collection of personal places.
+- HTML popups let me combine photographs, descriptions and links easily.
+- Built-in pan, zoom and touch interactions support exploring the places on desktop and mobile.
 
-Dünyanın tekrarlanmasını Leaflet’te noWrap ve harita sınırlarıyla; OpenLayers’ta wrapX: false ve görünüm sınırlarıyla engelledim. Her iki haritanın da en düşük yakınlaştırmasını 3 olarak belirledim.
+**Disadvantages and limits:**
 
-## Sayfalar
+- Features outside the core library can require plugins or custom code, adding dependencies to maintain.
+- More specialized projection or GIS workflows would need additional setup.
+- A large collection of nearby markers would need further design, such as clustering; my zoom threshold alone does not separate every nearby point.
 
-- index.html: kendim, seçtiğim projeler ve hobi fotoğrafları.
-- about.html: eğitimim, iletişim bilgilerim, MAPEG ve YMN stajlarım.
-- projects.html: iki ayrı çalışma, PDF’ler ve gerçek analiz görsellerini içeren tablo.
-- hobbies.html: hobilerim, fotoğraf ve seyahat galerilerim.
-- leaflet.html: kişisel yerlerim.
-- openlayers.html: akademik proje ve staj haritam.
-- maps.html: eski bağlantıların da çalışması için OpenLayers haritası.
+### Comparing my two implementations
 
-Harita kütüphaneleri ve altlıklar internet bağlantısı gerektiriyor. Yerel inceleme için VS Code Live Server kullanıyorum.
+| Aspect | Leaflet map | OpenLayers map |
+| --- | --- | --- |
+| My purpose | Personal places and hobbies | Academic work and internships |
+| Main content | Photo markers and short stories | Study boundary, crop overlays, basemaps and institution markers |
+| Main interaction | Select a place and open its photo popup | Select a date, compare layers and open project reports |
+| Setup in this project | Relatively simple marker/popup logic | More source, layer, projection and control configuration |
+| Main tradeoff | Extra features may need plugins or custom code | More configuration and state to learn and maintain |
 
-## Yapay zekâdan ne öğrendim?
+Using two libraries also means maintaining two versions of shared behavior, including language changes, zoom thresholds and map bounds. I accepted that tradeoff to demonstrate both libraries in the assignment. These are observations about my implementation, not a universal performance ranking.
 
-ChatGPT/Codex’ten HTML/CSS düzeni, JavaScript etkileşimleri, iki dilin yönetilmesi, hata ayıklama ve arayüzü kontrol etme konularında yardım aldım. Özellikle yakınlaştırma olaylarıyla işaretçi görünürlüğünü değiştirmeyi, dünya tekrarını kapatmayı, projeksiyon dönüşümünü, yerel dosya yolu ile web bağlantısı arasındaki farkı ve göreli yolları öğrendim. GeoTIFF’leri web katmanına dönüştürme ve erişilebilir menü/hareket azaltma düzenlemelerinde de yardım aldım.
+I checked the library capabilities against the official [Leaflet features](https://leafletjs.com/#features) and [OpenLayers overview](https://openlayers.org/).
 
-İçerikleri, fotoğrafları ve kişisel açıklamaları ben sağladım; bütün kodu tek başıma yazdığımı söylemiyorum. Toplam yapay zekâ kullanım sürem için yaklaşık 10 saatlik bir tahmin vermiştim. Bu süre kronometreyle ölçülmedi ve son tasarım oturumunu da kapsayacak şekilde teslimden önce kendi kullanımımı tekrar değerlendirmem gerekiyor. Ödev önce sorunları araştırıp sonra çözülemeyen konularda AI kullanmamızı istiyor; yapmadığım bir araştırmayı yapmışım gibi anlatmıyorum.
+## How I connected photographs, pages and reports
 
-## Ödev kontrolü ve teslim
+I copied my photographs into `assets/images` and used relative paths instead of paths to the Downloads folder on my computer. This allows the images to load when the project is uploaded to GitHub. Hobby cards and map popups reuse the same photograph files. The original photographs were not edited; CSS controls their displayed size and cropping.
 
-- En az üç HTML dosyası: var, toplam yedi.
-- CSS animasyonu: var.
-- Görselli tablo: projects.html içinde iki gerçek analiz görseliyle var.
-- OpenLayers ve Leaflet: ikisi de var.
-- İşaretçi yakınlaştırma eşiği ve dünya tekrarının engellenmesi: iki haritada da uygulanmış.
-- Farklı günlerde en az üç commit: geçmişte 5, 9 ve 10 Ekim 2026 görünüyor; tarihler değiştirilmedi.
-- GitHub üzerinde barındırma: GitHub Pages kullanıyorum.
-- AI ile öğrendiklerim ve yaklaşık kullanım süresi: yukarıda açıkladım.
+For example, `leaflet.html#bozcaada` opens the relevant location and its photo popup. Google Maps links open the location in another map service. PDF reports also use relative project paths. The TR/EN preference is stored in `localStorage` and continues across pages.
 
-Teslim 12 Ekim, akran değerlendirmesi 23 Ekim 2026. Sisteme kayıt oldum, ancak test bağlantısının kaydı hata nedeniyle doğrulanamadı. Resmî proje alanına teslim ve üç öğrenciye ayrıntılı değerlendirme verme adımları hâlâ ayrı işler. Son bir gerçek telefon kontrolünü de yapmam gerekiyor. Genel kalite puanı hocanın değerlendirmesine bağlı.
+Coordinates were matched using addresses and map sources. Some points represent a facility or a wider area, rather than an exact photo location. Sources are listed below.
 
-## Veri ve konum kaynakları
+## How I addressed the two map issues
 
-[OpenLayers](https://openlayers.org/) · [Leaflet](https://leafletjs.com/)
+**Marker overlap:** I chose zoom level 10 as the visibility threshold in both maps. The code checks the zoom when it changes: markers are hidden below 10 and shown at 10 or above. This implements the requested threshold behavior, although it does not guarantee that all closely spaced markers are separated at higher zoom levels.
 
-Aşağıdaki teknik kaynak notlarını koordinat ve veri kökenlerini kaybetmemek için korudum.
+**Repeated worlds:** In Leaflet, I used `noWrap` and geographic map bounds. In OpenLayers, I used `wrapX: false` and a constrained view extent. Both maps have a minimum zoom of 3.
 
-- Gym Center: [tesis](https://centergym.com.tr/yda-park-avenue/), [koordinat kaynağı](https://mapcarta.com/W606411043). Park Avenue yerleşkesini temsil eder.
+## Pages
+
+- `index.html`: introduction, selected projects and personal photographs.
+- `about.html`: education, contact information and MAPEG/YMN internships.
+- `projects.html`: two separate studies, PDF reports and a table with real analysis figures.
+- `hobbies.html`: hobbies, photography and travel galleries.
+- `leaflet.html`: personal places map.
+- `openlayers.html`: academic project and internship map.
+- `maps.html`: OpenLayers compatibility page for older links.
+
+The external map libraries and basemaps require an internet connection. For local viewing, I use VS Code Live Server.
+
+## What I learned with AI assistance
+
+I used ChatGPT/Codex for help with HTML/CSS structure, JavaScript interactions, bilingual content, debugging and interface checks. Specific concepts I learned include controlling marker visibility through zoom events, preventing world wrapping, transforming coordinates, distinguishing local file paths from web links, and using relative paths for GitHub Pages. I also received help with raster conversion, accessible navigation and reduced-motion support.
+
+I provided the personal content, photographs and descriptions. I do not claim to have independently written all the code. My earlier estimate of total AI-assisted work was approximately 10 hours. This was not timed, and I still need to reassess it to include the final design session before submission. The brief asks us to research problems first and use AI for unresolved issues; I do not claim an independent research history that I did not carry out.
+
+## Assignment checklist and submission
+
+- At least three HTML files: seven included.
+- CSS animation: included, with reduced-motion support.
+- Tabular information with images: two real analysis figures in `projects.html`.
+- OpenLayers and Leaflet maps: both included.
+- Zoom threshold and prevention of repeated worlds: implemented in both maps.
+- At least three commits on different days: history includes 5, 9 and 10 October 2026; dates were not altered.
+- GitHub hosting: GitHub Pages is used.
+- Specific AI learning and estimated usage time: documented above.
+
+Submission is due on 12 October and peer reviews on 23 October 2026. I registered for the review system, but the test-link record could not be confirmed because of a loading error. Formal submission and detailed feedback on three assigned projects remain separate tasks. A final check on a physical phone is also still needed. Overall quality is subject to the instructor’s assessment.
+
+## Data and location sources
+
+- Gym Center: [venue](https://centergym.com.tr/yda-park-avenue/), [coordinate source](https://mapcarta.com/W606411043). The marker represents the Park Avenue complex.
 - Rolls’n Smiles: https://mekanlar.com/mekan/rollsn-smiles-barbaros
 - Deli Yengeç: https://www.bugunnereye.com/ankara/deli-yengec
 - Coffee Break: https://menuburada.com/amp-restoran-coffee-break-universiteler-ankara/
 - Bozburun: https://mapcarta.com/12946408
 - Etmanyak: https://menuburada.com/etmanyak-burger-sosis-alacaatli-ankara/
 - Bozcaada: https://mapcarta.com/Bozcaada
-- Kapadokya/Göreme: https://mapcarta.com/G%C3%B6reme
-- Ahal Teke: https://www.ahalteketeniskulubu.com/ (yapılandırılmış konum verisi).
-- Eymir: https://geographic.org/geographic_names/name.php?c=turkey&fid=6202&uni=9163815
+- Cappadocia/Göreme: https://mapcarta.com/G%C3%B6reme
+- Ahal Teke: https://www.ahalteketeniskulubu.com/ (structured location data).
+- Lake Eymir: https://geographic.org/geographic_names/name.php?c=turkey&fid=6202&uni=9163815
 - Erciyes: https://mapcarta.com/W815651521
-- MAPEG: https://www.mapeg.gov.tr/Sayfa/iletisim (kurumun harita bağlantısı).
-- YMN: https://www.ymnproje.com (kurumun harita yerleştirmesi).
+- MAPEG: https://www.mapeg.gov.tr/Sayfa/iletisim (official map link).
+- YMN: https://www.ymnproje.com (official map embed).
 
-Çalışma sınırı assets/data/wadi-aoi.geojson dosyasında, tarım maskesi tarih/alan/eşik ve koordinat sınırları assets/data/crop-masks-metadata.json dosyasında kayıtlı. Orijinal analiz çıktılarımı kullandım. YMN fotoğrafları sağladığım staj defterindeki görsellerden alındı; sabit kanatlı İHA fotoğrafı Ankara-6494 ölçümünden ayrı bir taş ocağı ziyaretine ait.
+The study boundary is stored in `assets/data/wadi-aoi.geojson`. Crop-mask dates, areas, thresholds and extents are recorded in `assets/data/crop-masks-metadata.json`. These use my original analysis outputs. YMN photographs were extracted from my internship diary; the fixed-wing UAV photograph belongs to a separate quarry visit, not the Ankara-6494 survey.
 
-Temsili proje kapaklarını hazırlamak için yerleşim taslağındaki iki harita görünümünü referans verip yazısız iki uydu tarzı kapak istedim. Yerleşik Imagegen aracı kullanıldı. Son dosya assets/images/project-covers.png; kapaklar CSS ile iki ayrı kartta gösteriliyor.
+For the illustrative project covers, I referenced the two map views in the design mockup and requested two satellite-style backgrounds without text. The built-in Imagegen tool was used. The saved asset is `assets/images/project-covers.png`, displayed in two separate cards using CSS.
