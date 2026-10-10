@@ -14,7 +14,7 @@
 
 <header class="navbar">
 
-    <a href="index.html" class="active" aria-current="page" class="logo">RD.</a>
+    <a href="index.html" class="logo">RD.</a>
 
     <div class="nav-right">
 
@@ -92,125 +92,42 @@
 
 <main>
 
-    <section class="hero">
-
-        <div>
-
-            <p
-                class="eyebrow"
-                data-tr="GEOMATİK MÜHENDİSLİĞİ"
-                data-en="GEOMATICS ENGINEERING">
-                GEOMATICS ENGINEERING
-            </p>
-
-            <h1>
-                Rabia
-                <span>Demir.</span>
-            </h1>
-
-            <h2
-                data-tr="Geomatik Mühendisliği Öğrencisi"
-                data-en="Geomatics Engineering Student">
-                Geomatics Engineering Student
-            </h2>
-
-            <p
-                class="hero-description"
-                data-tr="Hacettepe Üniversitesi Geomatik Mühendisliği öğrencisiyim. Uzaktan algılama, CBS, uydu görüntüleri, Web GIS ve mekânsal veri analizi üzerine çalışıyorum."
-                data-en="I am a Geomatics Engineering student at Hacettepe University. My interests include Remote Sensing, GIS, satellite imagery, Web GIS and spatial data analysis.">
-
-                I am a Geomatics Engineering student at Hacettepe University.
-                My interests include Remote Sensing, GIS, satellite imagery,
-                Web GIS and spatial data analysis.
-
-            </p>
-
-            <div class="hero-buttons">
-
-                <a
-                    href="projects.html"
-                    class="button primary"
-                    data-tr="Projelerimi Gör"
-                    data-en="View Projects">
-                    View Projects
-                </a>
-
-                <a
-                    href="leaflet.html"
-                    class="button secondary"
-                    data-tr="Sevdiğim Yerleri Keşfet"
-                    data-en="Explore My Favorite Places">
-                    Explore My Favorite Places
-                </a>
-
-            </div>
-
-        </div>
-
-
-        <div class="hero-card">
-
-            <div class="coordinate-decoration">
-                39.9334° N<br>
-                32.8597° E
-            </div>
-
-            <p
-                class="section-label"
-                data-tr="İLGİ ALANLARI"
-                data-en="FOCUS AREAS">
-                FOCUS AREAS
-            </p>
-
-            <h3
-                data-tr="Mekânsal veriden anlam üretmek."
-                data-en="Turning spatial data into insight.">
-                Turning spatial data into insight.
-            </h3>
-
-            <ul>
-
-                <li data-tr="Uzaktan Algılama" data-en="Remote Sensing">
-                    Remote Sensing
-                </li>
-
-                <li data-tr="Coğrafi Bilgi Sistemleri" data-en="GIS">
-                    GIS
-                </li>
-
-                <li data-tr="Fotogrametri" data-en="Photogrammetry">
-                    Photogrammetry
-                </li>
-
-                <li data-tr="Web GIS" data-en="Web GIS">
-                    Web GIS
-                </li>
-
-                <li
-                    data-tr="Mekânsal Veri Analizi"
-                    data-en="Spatial Data Analysis">
-                    Spatial Data Analysis
-                </li>
-
-            </ul>
-
-        </div>
-
+    <section class="hero home-hero">
+      <div class="hero-copy">
+        <p class="eyebrow" data-en="GEOMATICS ENGINEERING" data-tr="GEOMATİK MÜHENDİSLİĞİ">GEOMATICS ENGINEERING</p>
+        <h1>Rabia <span>Demir.</span></h1>
+        <h2 data-en="Mapping places. Finding meaning." data-tr="Yerleri keşfetmek. Anlam bulmak.">Mapping places. Finding meaning.</h2>
+        <p class="hero-description" data-en="Geomatics Engineering student at Hacettepe University. Exploring remote sensing, GIS and the stories behind places." data-tr="Hacettepe Üniversitesi Geomatik Mühendisliği öğrencisiyim. Uzaktan algılamayı, CBS’yi ve yerlerin ardındaki hikâyeleri keşfediyorum.">Geomatics Engineering student at Hacettepe University. Exploring remote sensing, GIS and the stories behind places.</p>
+        <div class="hero-buttons"><a class="button primary" href="projects.html" data-en="Explore my work ↗" data-tr="Projelerimi keşfet ↗">Explore my work ↗</a><a class="button secondary" href="about.html" data-en="About me" data-tr="Hakkımda">About me</a></div>
+      </div>
+      <figure class="portrait"><img src="assets/images/rabia-portrait.jpeg" alt="Rabia Demir" width="1200" height="1600"><figcaption>People · Places · Data · Stories</figcaption></figure>
     </section>
-
+    <div class="focus-strip"><span>REMOTE SENSING / WEB GIS / PHOTOGRAMMETRY</span><span>ANKARA · 39.9334° N 32.8597° E</span></div>
+    <section class="section home-section">
+      <div class="section-heading-row"><h2 class="section-title" data-en="Selected work" data-tr="Seçtiğim çalışmalar">Selected work</h2><a class="text-link" href="projects.html" data-en="View all projects →" data-tr="Tüm projeler →">View all projects →</a></div>
+      <div class="featured-grid">
+        <a class="featured-card cover-wadi" href="projects.html#crop-masking"><span class="project-number">01</span><h3>Wadi As-Sirhan</h3><p data-en="Satellite imagery &amp; crop mapping" data-tr="Uydu görüntüleri ve tarım alanı haritalama">Satellite imagery &amp; crop mapping</p><div class="project-tags"><span>Remote Sensing</span><span>NDVI</span><span>Python</span></div><span class="card-arrow" aria-hidden="true">↗</span></a>
+        <a class="featured-card cover-geo" href="projects.html#geoinsight"><span class="project-number">02</span><h3>GEOINSIGHT</h3><p data-en="An agricultural Web GIS platform" data-tr="Tarımsal Web GIS platformu">An agricultural Web GIS platform</p><div class="project-tags"><span>Web GIS</span><span>Agriculture</span><span>JavaScript</span></div><span class="card-arrow" aria-hidden="true">↗</span></a>
+      </div><p class="cover-note" data-en="Illustrative project covers · Analysis results are available inside each project." data-tr="Temsili proje kapakları · Analiz sonuçları proje detaylarında yer alıyor.">Illustrative project covers · Analysis results are available inside each project.</p>
+    </section>
+    <section class="section home-section">
+      <p class="section-label" data-en="A LITTLE MORE PERSONAL" data-tr="BİRAZ DA BEN">A LITTLE MORE PERSONAL</p><h2 class="section-title" data-en="Beyond the maps" data-tr="Haritaların ötesinde">Beyond the maps</h2>
+      <div class="personal-grid">
+<article class="personal-card"><img src="assets/images/ahalteke-tennis.jpeg" alt="My tennis photo" loading="lazy"><div><a href="hobbies.html#ahalteke-hobby"><h3 data-en="On the court" data-tr="Kortta">On the court</h3></a><a class="text-link" href="leaflet.html#ahalteke" data-en="See on the map ↗" data-tr="Haritada gör ↗">See on the map ↗</a></div></article><article class="personal-card"><img src="assets/images/bozcaada.jpeg" alt="My Bozcaada photo" loading="lazy"><div><a href="hobbies.html#bozcaada"><h3 data-en="Places I return to" data-tr="Döndüğüm yerler">Places I return to</h3></a><a class="text-link" href="leaflet.html#bozcaada" data-en="See on the map ↗" data-tr="Haritada gör ↗">See on the map ↗</a></div></article><article class="personal-card"><img src="assets/images/pottery.jpeg" alt="My handmade clay dish" loading="lazy"><div><a href="hobbies.html#pottery"><h3 data-en="Made by hand" data-tr="Ellerimle ürettiklerim">Made by hand</h3><span data-en="Clay, a slower perspective." data-tr="Kil ve biraz yavaşlamak.">Clay, a slower perspective.</span></a></div></article></div><a class="text-link hobbies-more" href="hobbies.html" data-en="Explore my hobbies →" data-tr="Hobilerimi keşfet →">Explore my hobbies →</a>
+    </section>
 </main>
 
 
 <footer>
 
     <div>
-        <strong>Rabia Demir</strong>
+        <strong class="connect-title" data-en="Let’s connect." data-tr="İletişimde kalalım.">Let’s connect.</strong>
         <p data-en="Geomatics Engineering Student" data-tr="Geomatik Mühendisliği Öğrencisi">Geomatics Engineering Student</p>
     </div>
 
     <div class="footer-links">
-        <a href="about.html" data-en="About" data-tr="Hakkımda">About</a>
-        <a href="projects.html" data-en="Projects" data-tr="Projeler">Projects</a>
+        <a href="mailto:rabia.demrr@gmail.com">Email ↗</a>
+        <a href="https://github.com/rabiademr">GitHub ↗</a>
         <a href="hobbies.html" data-en="Hobbies" data-tr="Hobiler">Hobbies</a>
     </div>
 
@@ -218,5 +135,6 @@
 
 <script src="language.js"></script>
 
+<script src="ui.js"></script>
 </body>
 </html>
